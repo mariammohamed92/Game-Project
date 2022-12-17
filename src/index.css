@@ -1,0 +1,140 @@
+:root {
+  --bg-color: #272b30;
+  --bg-light: #4799eb;
+  --color-gray: #aaa;
+}
+body {
+  background-color: var(--bg-color);
+  color: var(--color-gray);
+}
+.navbar {
+  background-color: #272b30 !important;
+  border-bottom: 1px solid rgba(28, 28, 28, 0.6);
+}
+.navbar .logo {
+  width: 70px;
+}
+.my-inputs {
+  background-color: #1c1e22;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  color: #fff;
+}
+.dropdown-item {
+  color: var(--color-gray);
+}
+.dropdown-menu {
+  background-color: #3a3f44;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  -webkit-border-radius: 0.25rem;
+  -moz-border-radius: 0.25rem;
+  -ms-border-radius: 0.25rem;
+  -o-border-radius: 0.25rem;
+}
+.dropdown-item:hover {
+  color: #fff;
+  text-decoration: none;
+  background-color: #272b30;
+}
+.bg-register-image {
+  background-image: url("./Images/gaming.jpg");
+  background-size: 100% 100%;
+}
+.btn-submit {
+  color: #fff;
+  background-color: #3a3f44;
+  border-color: #101112;
+  outline: none;
+}
+.btn:hover {
+  background-image: linear-gradient(#101112, #17191b 40%, #1b1e20);
+  background-repeat: no-repeat;
+  border: none;
+}
+.gray {
+  background-color: #32383e;
+}
+.text-gray {
+  color: rgb(152 152 152);
+}
+.bordr {
+  border: 1px solid var(--bg-light);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: var(--bg-light) !important;
+  cursor: pointer;
+}
+
+.blue {
+  color: #49acff !important;
+}
+.title {
+  background: url("../src/Images/paladins.b44d33d6e7ee1ba8.png");
+  background-repeat: no-repeat;
+  background-color: #1c1e22;
+  background-position: top;
+  background-size: contain;
+  border-radius: 0.3rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  padding: 4rem 2rem;
+}
+.card-box:hover .card {
+  transform: scale(1.03);
+}
+.card {
+  background-color: #32383e;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  border-radius: 0.25rem;
+  transition: transform 1s;
+  -webkit-transition: transform 1s;
+  -moz-transition: transform 1s;
+  -ms-transition: transform 1s;
+  -o-transition: transform 1s;
+}
+.card-btn {
+  background-color: var(--bg-light);
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.genre {
+  background-color: #7a8288;
+  padding-top: 1px;
+  padding-bottom: 2px;
+  transform: translateY(-12%);
+}
+.details,
+.details:hover {
+  color: var(--color-gray);
+}
+.dark {
+  color: var(--color-gray);
+  background-color: #32383e;
+  border-color: #32383e;
+}
+.dark:hover {
+  color: #fff;
+  background-color: #3a3f44;
+  border-color: #3a3f44;
+}
+
+.deep-dark {
+  background-color: #1c1e22;
+  border: 0 solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #d9d9d9;
+}

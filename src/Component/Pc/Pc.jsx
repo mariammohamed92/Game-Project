@@ -1,0 +1,119 @@
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+
+
+export default function Pc() {
+  const [visible, setVisible] = useState(20);
+  const [platformPc, setPlatformPc] = useState([]);
+
+  async function getAllGame(platform_type, func) {
+    const options = {
+      method: "GET",
+      url: "https://free-to-play-games-database.p.rapidapi.com/api/games",
+      params: { platform: `${platform_type}` },
+      headers: {
+        "X-RapidAPI-Key": "9682ed2c68msh19d7eceae802daep14631ejsnd25102d05675",
+        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
+      },
+    };
+
+    await axios
+      .request(options)
+      .then(
+        await function (response) {
+          func(response.data);
+          console.log("kkkkkkkkkkkkkkkkkkkkk" + response.data);
+        }
+      )
+      .catch(function (error) {
+        console.error(error);
+      });
+  }
+  function loadMore() {
+    setVisible(visible + 20);
+  }
+  useEffect(() => {
+    getAllGame("pc", setPlatformPc);
+  }, []);
+
+
+
+
+
+
+  return (
+    <>
+          <div className="container py-5 my-5">
+        <div className="row g-3">
+          {platformPc?.slice(0, visible).map((game, index) => {
+            return (
+              <div key={index} className="col-md-3 shadow card-box">
+                <Link
+                  to={"/gamedetails/" + game.id}
+                  className="text-decoration-none details"
+                >
+                  <div className="card w-100 h-100">
+                    <img
+                      src={game.thumbnail}
+                      className="card-img-top"
+                      alt="game"
+                    />
+                    <div className="card-body d-flex justify-content-between align-items-start">
+                      <div>
+                        {console.log(
+                          "ddd " + game.title.split(" ").slice(0, 3)
+                        )}
+                        {console.log(
+                          "gggg " +
+                            game.short_description.split("  ").slice(0, 3)
+                        )}
+
+                        <h5 className="card-title">
+                          {game.title.slice(0, 20)}
+                        </h5>
+                        <p className="card-text text-muted small">
+                          {game.short_description.slice(0, 20)} ...
+                        </p>
+                      </div>
+                      <Link to="#" className="btn card-btn btn-sm">
+                        Free
+                      </Link>
+                    </div>
+
+                    <div className="card-body pt-0 d-flex justify-content-between align-items-center ">
+                      <i className="fas fa-plus-square"></i>
+                      <div>
+                        <span className="me-2 genre text-dark badge badge-secondary">
+                          {game.genre}
+                        </span>
+                        {game.platform === "PC (Windows)" ? (
+                          <i className="fab fa-windows text-muted stretched-link"></i>
+                        ) : (
+                          <i className="fas fa-window-maximize text-muted stretched-link"></i>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+          <div className="text-center">
+            {visible < platformPc.length && (
+              <button
+                onClick={loadMore}
+                className="btn btn-outline-secondary btn-md ml-0"
+              >
+                More Games
+              </button>
+            )}
+          </div>
+        </div>
+      </div>
+    
+    
+    
+    </>
+  )
+}
