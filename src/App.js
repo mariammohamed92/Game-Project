@@ -1,4 +1,4 @@
-import logo from '../src/Images/logo.png';
+import logo from './Images/logo.png';
 import './App.css';
 import jwtDecode from 'jwt-decode';
 import { useEffect, useState } from 'react';

@@ -1,5 +1,5 @@
 {
-  "homepage": "https://mariammohamed92.github.io/Game-project",
+  "homepage": "https://mariammohamed92.github.io/Games",
   "name": "app1",
   "version": "0.1.0",
   "private": true,
@@ -10,6 +10,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.1",
     "bootstrap": "^5.2.3",
+    "build": "^0.1.4",
     "joi": "^17.7.0",
     "jwt-decode": "^3.1.2",
     "react": "^18.2.0",
@@ -20,9 +21,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+   "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
