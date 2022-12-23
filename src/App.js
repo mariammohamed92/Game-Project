@@ -62,6 +62,7 @@ function App() {
       path:'/', element:<Layout userData={userData} logOut={logOut}/>,
       children:[
         {
+          
           path:'home', element:(
             <ProtectedRouter
             userData={userData} decodeUserData={decodeUserData}>
@@ -133,7 +134,9 @@ function App() {
           ),
         },
         {index: true, element:<Login decodeUserData={decodeUserData}/>},
-        {path:'register', element:<Register/>}
+        {path:'register', element:<Register/>},
+        {path:'*', element:<Register/>}
+
       ],
     },
   ]);
