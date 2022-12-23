@@ -135,7 +135,7 @@ function App() {
         },
         {index: true, element:<Login decodeUserData={decodeUserData}/>},
         {path:'register', element:<Register/>},
-        {path:'*', element:<Register/>}
+        {path:'*', element:<Login/>}
 
       ],
     },
